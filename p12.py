@@ -1,8 +1,8 @@
 def triangle_number(n):
 	num = 0
 	while n > 0:
-		num = num + n
-		n = n - 1
+		num += n
+		n -= 1
 	return num
 
 def num_of_divisors(n):
@@ -10,13 +10,13 @@ def num_of_divisors(n):
 	check = n / 2
 	while check > 1:
 		if n % check == 0:
-			num = num + 1
-		check = check - 1
+			num += 1
+		check -= 1
 	return num
 
 i = 1
 while(True):
-	if num_of_divisors(triangle_number(i)) > 150:
+	if num_of_divisors(triangle_number(i)) > 5:
 		print triangle_number(i)
 		break
-	i = i + 1
+	i += 1
