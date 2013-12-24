@@ -14,7 +14,7 @@ def greatest_prime_factor(n):
 	while left != 1:
 		i = 2
 		while left % i != 0:
-			i = i + 1
+			i += 1
 		left = left / i
 		if i > max:
 			max = i

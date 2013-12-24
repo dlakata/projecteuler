@@ -10,6 +10,6 @@ def is_prime(n):
 sum = 0
 for x in range(0,2000000):
 	if is_prime(x):
-		sum = sum + x
+		sum += x
 
 print sum
