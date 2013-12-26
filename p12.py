@@ -1,3 +1,5 @@
+import math
+
 # Triangular numbers defined by T(n) = n * (n + 1) / 2
 # (as provided by Problem 42)
 # Original function:
@@ -11,13 +13,13 @@ def triangle_number(n):
 	return n * (n + 1) / 2
 
 def num_of_divisors(n):
-	num = 2
-	check = n / 2
+	num = 1
+	check = int(math.sqrt(n))
 	while check > 1:
 		if n % check == 0:
 			num += 1
 		check -= 1
-	return num
+	return 2 * num
 
 i = 1
 while(True):
