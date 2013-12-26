@@ -1,7 +1,11 @@
 import math
 
-sum = 0
-for a in xrange(1001):
-	sum += math.pow(a,a)
+def sum_series(n):
+	sum = 0
+	for a in range(1,n):
+		sum += math.pow(a,a)
+	return int(sum)
 
-print sum
+for x in range(1,201):
+	print str(x) + ": " + str(sum_series(x))
+
