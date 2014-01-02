@@ -15,12 +15,10 @@ triangle = [
 [63, 66, 04, 68, 89, 53, 67, 30, 73, 16, 69, 87, 40, 31,  0],
 [04, 62, 98, 27, 23,  9, 70, 98, 73, 93, 38, 53, 60, 04, 23]]
 
-def sum_paths(i, j):
+def max_paths(i, j, sum):
 	if i == 14:
-		return triangle[i][j]
-	if j == 0:
-		return sum_paths(i+1,0) + sum_paths(i+1,1)
-	return sum_paths(i+1,j-1) + sum_paths(i+1,j) + sum_paths(i+1,j+1)
-		
+		return triangle[i][j] + sum
+	return max(max_paths(i+1,j,sum+triangle[i][j]),
+		max_paths(i+1,j+1,sum+triangle[i][j]))
 
-print sum_paths(0,0)
+print max_paths(0,0,0)
